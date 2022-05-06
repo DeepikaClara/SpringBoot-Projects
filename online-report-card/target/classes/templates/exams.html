@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>List Exams</title>
+</head>
+<body>
+<h2>Exam Lists</h2>
+
+<ul>
+<li th:each="exam : ${exams}">
+<span th:text="${exam.examName}">Exam Name</span>
+</li>
+</ul>
+<div align="center">
+<a th:href="@{scores}">Students Scores</a> |
+<a th:href="@{index}">Back</a></div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xlmns:th="http//www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>score page</title>
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+     
+    th,
+    td {
+        padding: 20px;
+    }
+     
+    th {
+        text-align: left;
+    }
+    </style>
+</head>
+<body>
+<h2>Students Scores</h2>
+<table>
+<tr>
+<th>Student Id</th>
+<th>Student Name</th>
+
+<th>Tamil</th>
+<th>English</th>
+<th>Maths</th>
+<th>Science</th>
+<th>Social Science</th>
+<th>Total</th>
+<th>Result</th>
+</tr>
+<tr th:each="score:${scores}">
+<td th:text="${score.studentId}"></td>
+<td th:text="${score.studentName}"></td>
+
+<td th:text="${score.tamilMarks}"></td>
+<td th:text="${score.englishMarks}"></td>
+<td th:text="${score.mathsMarks}"></td>
+<td th:text="${score.scienceMarks}"></td>
+<td th:text="${score.socialScienceMarks}"></td>
+<td th:text="${score.totalMarks}"></td>
+<td th:text="${score.result}"></td>
+</tr></table>
+
+</body>
+</html>
